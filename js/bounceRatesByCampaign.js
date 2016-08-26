@@ -18,7 +18,7 @@ MP.api.jql(
       from_date: params.start_date,
       to_date:   params.end_date
     })
-    .groupByUser(['properties.utm_campaign',function(event){ return new Date(event.time).toISOString().substr(0, 10)}], mixpanel.reducer.count())
+    .groupByUser(['properties.utm_source',function(event){ return new Date(event.time).toISOString().substr(0, 10)}], mixpanel.reducer.count())
     .filter(function(item){
       if (item.value < 6){
         return item
@@ -34,7 +34,7 @@ params).done(function(bounceResults){
         from_date: params.start_date,
         to_date:   params.end_date
       })
-      .groupByUser(['properties.utm_campaign',function(event){ return new Date(event.time).toISOString().substr(0, 10)}], mixpanel.reducer.count())
+      .groupByUser(['properties.utm_source',function(event){ return new Date(event.time).toISOString().substr(0, 10)}], mixpanel.reducer.count())
       .groupBy(['key.1', 'key.2'], mixpanel.reducer.count())
     },
   params).done(function(nonBounceResults){
