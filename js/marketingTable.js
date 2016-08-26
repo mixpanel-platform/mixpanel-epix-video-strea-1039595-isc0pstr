@@ -37,7 +37,7 @@ var topCampaigns = []
 var eventOneCampaigns = [], eventTwoCampaigns =[], eventThreeCampaigns =[], eventFourCampaigns =[], eventFiveCampaigns =[] // array to hold all campaigns found on top events
 var eventOne, eventTwo, eventThree, eventFour, eventFive // event variables to hold sum of daily counts
 var dataSet = [] //global variable to hold final data for campaigns chart
-var campaignProperty = 'utm_campaign'
+var campaignProperty = 'utm_source'
 
 var topWebEventsScript = $('#jql-top-web-events').html();
 topWebEventsScript = $.trim(topWebEventsScript)
