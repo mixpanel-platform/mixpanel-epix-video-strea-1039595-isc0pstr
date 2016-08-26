@@ -454,10 +454,10 @@
           }
         })
         // change this value if your utm campaign params are different
-        .groupBy(["properties.utm_campaign"], mixpanel.reducer.sum(
+        .groupBy(["properties.utm_source"], mixpanel.reducer.sum(
             function(event){
               //change this value to the property where revenue is stored
-              if(event.properties["utm_campaign"] !== "undefined"){
+              if(event.properties["utm_source"] !== "undefined"){
                 return event.properties["$revenue"]
               }
             }
@@ -495,7 +495,7 @@
         return new Date(event.time).toISOString().substr(0, 10);
       }
       function utm(event){
-        return event.properties.utm_campaign
+        return event.properties.utm_source
       }
     </script>
     <!-- jql for events by user by user -->
@@ -555,7 +555,7 @@
         return new Date(event.time).toISOString().substr(0, 10);
       }
       function utm(event){
-        return event.properties.utm_campaign
+        return event.properties.utm_souce
       }
     </script>
     <!--jql query to get saved campaign spends-->
